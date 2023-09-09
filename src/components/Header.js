@@ -1,8 +1,8 @@
 import React from "react";
-import '../components/Header.css'
+import '../deskstopStyle.css'
 export const Header = () => {
   return (
-    <div className="titles">
+    <div>
       <h1 id="name">Mrda Marko</h1>
 
       <h2 id="occupation">
