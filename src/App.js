@@ -1,7 +1,10 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 import BigContent from "./components/BigContent";
 import { Header } from "./components/Header";
 import { SideContent } from "./components/SideContent";
+import CVForm from "./components/CVForm";
 
 function App() {
   const GeneratePDF = () => {
@@ -47,16 +50,33 @@ function App() {
   };
 
   return (
-    <div className="frame">
-      <button class="buttonGenerate" onClick={GeneratePDF}>
-        Print Cv
-      </button>
-      <Header />
-      <div className="toFlex delayContent">
-        <BigContent />
-        <SideContent />
+    <Router>
+      <div className="frame">
+        <Link to="/createCV" className="buttonGenerate">
+          New CV
+        </Link>
+        <button className="buttonGenerate" onClick={()=>GeneratePDF()}>
+          Print Cv
+        </button>
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <div className="toFlex delayContent">
+                  <BigContent />
+                  <SideContent />
+                </div>
+              </>
+            }
+          />
+
+          <Route path="/createCV" element={<CVForm />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 

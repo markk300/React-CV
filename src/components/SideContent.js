@@ -1,44 +1,45 @@
 import React from 'react'
-
+import '../deskstopStyle.css'
+import dummyuserpx from '../assets/dummy-user-px.jpg'
 export const SideContent = () => {
   return (
     <div>
-        <ul class="sideContent">
-                <div class="group" data-group="info">
-                    <div class="titleButton" onclick="actionButtonMobile('info')">
-                        <h3 class="infoTitle">BASIC INFO</h3>
-                        <img src="./src/img/add.png" class="img imgMobile imgInfo"></img>
+        <ul className="sideContent">
+                <div className="group" data-group="info">
+                    <div className="titleButton" onClick="actionButtonMobile('info')">
+                        <h3 className="infoTitle">BASIC INFO</h3>
+                        <img src={dummyuserpx} className="img imgMobile imgInfo" alt='profileimg'></img>
                     </div>
-                    <div class="moreMobileInfo">
+                    <div className="moreMobileInfo">
                         <div>
                             <li>
                                 <div>
-                                    <h3 class="mobileTitle">Contact</h3>
+                                    <h3 className="mobileTitle">Contact</h3>
                                     
                                     
-                                    <p class="contact" id="email">mrdamarkomm@gmail.com</p>
+                                    <p className="contact" id="email">mrdamarkomm@gmail.com</p>
 
                                     
-                                    <p class="contact" id="phone">065-039-061</p>
-                                     <p class="contact" >
+                                    <p className="contact" id="phone">065-039-061</p>
+                                     <p className="contact" >
                                         <a href="https://www.linkedin.com/in/marko-mrda-a2011321b/">Linkedin</a>
                                     </p> 
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <h3 class="mobileTitle">About me</h3>
+                                    <h3 className="mobileTitle">About me</h3>
 
                                    
-                                    <p class="about" id="aboutMe">
+                                    <p className="about" id="aboutMe">
                                     I love to code because if I can think it, I can make it a reality. 
                                     </p>
                                 </div>
                             </li>
                             <li>
-                                <div class="group" data-group="techSkills">
-                                    <h3 class="mobileTitle">Key Technical skills</h3>
-                                    <ul class="styledList" id="techList">
+                                <div className="group" data-group="techSkills">
+                                    <h3 className="mobileTitle">Key Technical skills</h3>
+                                    <ul className="styledList" id="techList">
 
                                         
                                         <li>React</li>
@@ -54,11 +55,11 @@ export const SideContent = () => {
 
                             </li>
                             <li>
-                                <div class="group" data-group="softSkills">
-                                    <h3 class="mobileTitle">Soft skills</h3>
+                                <div className="group" data-group="softSkills">
+                                    <h3 className="mobileTitle">Soft skills</h3>
 
                                     
-                                    <ul class="styledList" id="softList">
+                                    <ul className="styledList" id="softList">
                                         <li>Goal Oriented</li> 
                                         <li>Positive Influence on the team</li>
                                         <li>More soft skills...</li>
@@ -67,12 +68,12 @@ export const SideContent = () => {
 
                             </li>
                             <li>
-                                <div class="group" data-group="language">
-                                    <h3 class="mobileTitle">Languages</h3>
+                                <div className="group" data-group="language">
+                                    <h3 className="mobileTitle">Languages</h3>
 
                                     
 
-                                    <ul class="styledList" id="languageList">
+                                    <ul className="styledList" id="languageList">
                                         <li>Bosnian/Croatian/Serbian</li>
                                         <li>English</li>
                                         <li>German</li>

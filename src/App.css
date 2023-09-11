@@ -164,7 +164,8 @@ hr{
 .buttonGenerate {
   float: right;
   margin-top: 50px;
-  margin-right: 25%;
+  margin-bottom: 20px;
+  margin-right: 5%;
   animation: fadein 4s;
   border-radius: 15px;
   padding: 5px 10px;
@@ -184,6 +185,8 @@ hr{
     letter-spacing: 2px;
     float: right;
     animation: fadein 8s;
+    font-size: 15px;
+    text-decoration: none;
 }
 
 @keyframes fadein {
