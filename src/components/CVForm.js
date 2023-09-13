@@ -49,11 +49,13 @@ const CVForm = () => {
 
   const handleItemChange = (e, type, index) => {
     const { name, value } = e.target;
-    const updatedItems = [{ ...formData[type] }];
-    updatedItems[index][name] = value;
-    setFormData({
-      ...formData,
-      [type]: updatedItems,
+    setFormData((prevState) => {
+      const updatedItems = [...prevState[type]]; 
+      updatedItems[index][name] = value; 
+      return {
+        ...prevState,
+        [type]: updatedItems, 
+      };
     });
   };
 
@@ -67,6 +69,7 @@ const CVForm = () => {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
+    navigate('/')
     console.log(formData);
   };
 
@@ -137,7 +140,7 @@ const CVForm = () => {
             className="form-input"
             name="subtitle"
             value={experience.subtitle}
-            onChange={(e) => handleItemChange(e, "subtitles", index)}
+            onChange={(e) => handleItemChange(e, "experiences", index)}
           />
           <br />
           <label className="form-label">Description:</label>
@@ -145,7 +148,7 @@ const CVForm = () => {
             className="form-textarea"
             name="description"
             value={experience.description}
-            onChange={(e) => handleItemChange(e, "descriptions", index)}
+            onChange={(e) => handleItemChange(e, "experiences", index)}
           />
           <br />
           <label className="form-label">Time Range:</label>
@@ -154,7 +157,7 @@ const CVForm = () => {
             className="form-input"
             name="timeRange"
             value={experience.timeRange}
-            onChange={(e) => handleItemChange(e, "timeRanges", index)}
+            onChange={(e) => handleItemChange(e, "experiences", index)}
           />
           <br />
         </div>
@@ -183,7 +186,7 @@ const CVForm = () => {
             className="form-input"
             name="degree"
             value={education.degree}
-            onChange={(e) => handleItemChange(e, "degrees", index)}
+            onChange={(e) => handleItemChange(e, "educations", index)}
           />
           <br />
           <label className="form-label">Field Of Study</label>
@@ -192,7 +195,7 @@ const CVForm = () => {
             className="form-input"
             name="fieldOfStudy"
             value={education.fieldOfStudy}
-            onChange={(e) => handleItemChange(e, "fieldOfStudys", index)}
+            onChange={(e) => handleItemChange(e, "educations", index)}
           />
           <br />
           <label className="form-label">Field Of Study</label>
@@ -201,7 +204,7 @@ const CVForm = () => {
             className="form-input"
             name="fieldOfStudy"
             value={education.fieldOfStudy}
-            onChange={(e) => handleItemChange(e, "fieldOfStudys", index)}
+            onChange={(e) => handleItemChange(e, "educations", index)}
           />
           <br />
           <label className="form-label">Graduation Date</label>
@@ -210,7 +213,7 @@ const CVForm = () => {
             className="form-input"
             name="graduationDate"
             value={education.graduationDate}
-            onChange={(e) => handleItemChange(e, "graduationDates", index)}
+            onChange={(e) => handleItemChange(e, "educations", index)}
           />
           <br />
         </div>
